@@ -1,4 +1,4 @@
-import { AsyncEffect } from '@7urtle/lambda';
+import { AsyncEffect, Maybe } from '@7urtle/lambda';
 
 const quotes = {
     'Steve Jobs': [
@@ -16,10 +16,12 @@ const quotes = {
 export const requestQuote = action =>
     AsyncEffect
     .of(reject => resolve => 
-        setTimeout(() => resolve({data: {
-            quote: 'Innovation distinguishes between a leader and a follower.',
-            author: action.payload
-        }}), 1000)
+        setTimeout(() => resolve(
+            Maybe.of({
+                quote: 'Innovation distinguishes between a leader and a follower.',
+                author: 'Steve Jobs'
+            })
+        ), 1000)
     );
 
 // TODO: write randomOf for @7urtle/lambda

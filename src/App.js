@@ -1,5 +1,7 @@
 import React from 'react';
-import { StoreProvider } from "./store/StoreContext";
+
+import { StoreProvider } from './store/StoreContext';
+import HomePage from './pages/HomePage';
 
 /**
  * Base Template component holding the basic web application
@@ -8,7 +10,7 @@ import { StoreProvider } from "./store/StoreContext";
 const App = () => {
     return (
         <StoreProvider>
-            <h1>Hello world</h1>
+            <HomePage />
         </StoreProvider>
     );
 };
