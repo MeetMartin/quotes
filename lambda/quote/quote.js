@@ -1,6 +1,4 @@
-import { AsyncEffect, Maybe, randomOf, keysOf } from '@7urtle/lambda';
-
-import { postToFunction } from './NetlifyFunction';
+import { randomOf, keysOf } from '@7urtle/lambda';
 
 const quotes = {
     'Steve Jobs': [
@@ -24,12 +22,10 @@ const getRandomQuote = quotes =>
     )
     (randomOf(keysOf(quotes)));
 
-export const requestQuote = action =>
-    AsyncEffect
-    .of(reject => resolve => 
-        setTimeout(() => resolve(
-            Maybe.of(getRandomQuote(quotes))
-        ), 1000)
-    );
+const handler = async (event, context) =>
+  ({
+    statusCode: 200,
+    body: JSON.stringify(getRandomQuote(quotes))
+  });
 
-export const constGetTokenFromNetlify = postToFunction('/quote');
+export {handler};

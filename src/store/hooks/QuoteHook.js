@@ -2,7 +2,7 @@ import { maybe } from '@7urtle/lambda';
 
 import types from "../types";
 import logger from '../../logger';
-import { requestQuote } from '../effects/QuoteEffect';
+import { requestQuote, constGetTokenFromNetlify } from '../effects/QuoteEffect';
 
 /**
  * getQuote is a hook that processes requesting a quote through QuoteEffect asynchronously.
@@ -18,7 +18,7 @@ import { requestQuote } from '../effects/QuoteEffect';
  * @returns {null}
  */
 export const getQuote = dispatch => action =>
-    requestQuote(action) // returns AsyncEffect
+    constGetTokenFromNetlify(action) // returns AsyncEffect
         .trigger
         (logger.error) // error in AsyncEffect
         (maybe // success in AsyncEffect
