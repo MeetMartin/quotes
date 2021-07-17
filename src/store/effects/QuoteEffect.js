@@ -32,4 +32,4 @@ export const requestQuote = action =>
         ), 1000)
     );
 
-export const constGetTokenFromNetlify = postToFunction('/quote');
+export const getQuoteFromNetlify = postToFunction('/quote');
