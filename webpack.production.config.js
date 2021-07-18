@@ -100,7 +100,10 @@ module.exports = {
                 concurrency: 100,
             }
         }),
-        new HtmlWebpackPlugin({template: './index.html'})
+        new HtmlWebpackPlugin({template: './index.html'}),
+        new webpack.DefinePlugin({
+            SC_DISABLE_SPEEDY: true
+        })
     ].filter(n => n),
     optimization: {
         usedExports: true,
