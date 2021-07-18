@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { StoreContext } from '../store/StoreContext';
 
 const BackgroundDiv = styled.div`
-    background: ${props => console.log(props.colors) || 'linear-gradient(135deg, ' + props.colors[0] + ', ' + props.colors[1] + ');'}
+    background: ${props => console.log(props.colors) || 'linear-gradient(135deg, ' + props.colors[0] + ', ' + props.colors[1] + ')'};
     width: 100%;
     height: 100%;
     display: block;
@@ -18,7 +18,19 @@ const BackgroundDiv = styled.div`
 const colors = [
     ['#41B3A3', '#85DCB0'],
     ['#99D5F3', '#DBB3E7'],
-    ['#E27D60', '#C38D9E']
+    ['#E27D60', '#C38D9E'],
+    ['#553D67', '#99738E'],
+    ['#242582', '#2F2FA2'],
+    ['#8D8741', '#BC986A'],
+    ['#379683', '#5CDB95'],
+    ['#55BCC9', '#97CAEF'],
+    ['#EDF5E1', '#8EE4AF'],
+    ['#907163', '#379683'],
+    ['#5D5C61', '#557A95'],
+    ['#501B1D', '#64485C'],
+    ['#190061', '#240090'],
+    ['#6F2232', '#950740'],
+    ['#2C3531', '#116466']
 ];
 
 const Background = () => {
