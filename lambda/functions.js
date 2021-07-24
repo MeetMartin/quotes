@@ -16,73 +16,96 @@ import { handler as QuoteHandler } from './quote/quote';
  * @example
  * requestToNetlifyHandlerEvent(request); // => event
  */
-const requestToNetlifyHandlerEvent = request => (headers => ({path: request.path, body: JSON.stringify(headers.data)}))((({configuration, ...headers}) => headers)(request));
+const requestToNetlifyHandlerEvent = request =>
+    ({
+        ...request,
+        body: JSON.stringify(request.data)
+    });
+
+/**
+ * Wraps Netlify handler into AsyncEffect.
+ * 
+ * @HindleyMilner handlerToAsyncEffect :: (a -> b) -> object -> AsyncEffect.of(() -> (object -> b))
+ *
+ * @pure
+ * @param {function} handler Netlify function handler
+ * @param {object} request Netlify event object
+ * @returns {AsyncEffect} AsyncEffect of Netlify function handler
+ * 
+ * @example
+ * handlerToAsyncEffect(async (event, context) => ({}))({path: '/path'}); // => AsyncEffect
+ */
+const handlerToAsyncEffect = handler => event => AsyncEffect.ofPromise(() => handler(event));
 
 /**
  * Adds cors headers to support local development against localhost:8080
  * 
- * @HindleyMilner addCORSForLocalDevelopment :: functor -> functor
+ * @HindleyMilner addCORSForLocalDevelopment :: object -> object
  *
  * @pure
- * @returns {functor} inputed functor with mapped over cors headers
+ * @returns {object} response object
  * 
  * @example
- * addCORSForLocalDevelopment(functor); // => functor
+ * addCORSForLocalDevelopment({});
+ * // => {
+ *  'Access-Control-Allow-Origin': 'http://localhost:8080',
+ *  'Access-Control-Request-Method': 'POST, OPTIONS, GET, HEAD',
+ *  'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+ * }
  */
-const addCORSForLocalDevelopment = map(response => ({
+const addCORSForLocalDevelopment = response => ({
     ...response,
     'Access-Control-Allow-Origin': 'http://localhost:8080',
     'Access-Control-Request-Method': 'POST, OPTIONS, GET, HEAD',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-}));
+});
 
 /**
  * Makes sure that response data appear in the response content
  * 
- * @HindleyMilner getResponseData :: functor -> functor
+ * @HindleyMilner getResponseData :: object -> object
  *
  * @pure
- * @returns {functor} inputed functor with mapped over content data
- * 
+ * @returns {object} response objecct
  * @example
- * getResponseData(functor); // => functor
+ * getResponseData({body: 'hello world'}); // => {body: 'hello world', content: 'hello world'}
  */
-const getResponseData = map(response => ({
+const getResponseData = response => ({
     ...response,
     content: response.body
-}));
+});
 
 /**
  * Add no-store Cache Control header
  * 
- * @HindleyMilner noCacheHeader :: functor -> functor
+ * @HindleyMilner noCacheHeader :: object -> object
  *
  * @pure
- * @returns {functor} inputed functor with mapped over content data
+ * @returns {object} response object
  * 
  * @example
- * noCacheHeader(functor); // => functor
+ * noCacheHeader({anything: 'anything'}); // => {anything: 'anything', 'Cache-Control': 'no-store'}
  */
- const noCacheHeader = map(response => ({
+ const noCacheHeader = response => ({
     ...response,
     'Cache-Control': 'no-store'
-}));
+});
 
 /**
  * Sets response status based on Netlify function statusCode
  * 
- * @HindleyMilner setStatus :: functor -> functor
+ * @HindleyMilner setStatus :: object -> object
  *
  * @pure
- * @returns {functor} inputed functor with mapped over content data
+ * @returns {object} response with status
  * 
  * @example
- * setStatus(functor); // => functor
+ * setStatus({statusCode: 200}); // => {statusCode: 200, status: 200}
  */
-const setStatus = map(response => ({
+const setStatus = response => ({
     ...response,
     status: response.statusCode
-}))
+})
 
 /**
  * Accepts Netlify function handler and returns AsyncEffect accepted by @lambda/server route response
@@ -97,12 +120,11 @@ const setStatus = map(response => ({
  * netlifyFunctionHandler(handler)(request); // => AsyncEffect
  */
 const netlifyFunctionHandler = handler => compose(
-    getResponseData,
-    noCacheHeader,
-    addCORSForLocalDevelopment,
-    setStatus,
-    AsyncEffect.ofPromise,
-    handler,
+    map(getResponseData),
+    map(noCacheHeader),
+    map(addCORSForLocalDevelopment),
+    map(setStatus),
+    handlerToAsyncEffect(handler),
     requestToNetlifyHandlerEvent
 );
 
