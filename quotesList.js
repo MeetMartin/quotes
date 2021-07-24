@@ -78,6 +78,21 @@ const quotes = {
         'The way to get started is to quit talking and begin doing.',
         'Why worry? If you’ve done the very best you can, then worrying won’t make it any better.',
         'I don’t make pictures just to make money. I make money to make more pictures.'
+    ],
+    'Arnold Schwarzenegger': [
+        'You have to remember something: Everybody pities the weak; jealousy you have to earn.',
+        'Strength does not come from winning. Your struggles develop your strengths. When you go through hardships and decide not to surrender, that is strength.',
+        'What is the point of being on this Earth if you are going to be like everyone else?',
+        'Just like in bodybuilding, failure is also a necessary experience for growth in our own lives, for if we’re never tested to our limits, how will we know how strong we really are? How will we ever grow?',
+        'For me life is continuously being hungry. The meaning of life is not simply to exist, to survive, but to move ahead, to go up, to achieve, to conquer.',
+        'The last three or four reps is what makes the muscle grow. This area of pain divides the champion from someone else who is not a champion. That’s what most people lack, having the guts to go on and just say they’ll go through the pain no matter what happens.',
+        'If you don’t find the time, if you don’t do the work, you don’t get the results.',
+        'Positive thinking can be contagious. Being surrounded by winners helps you develop into a winner.',
+        'If you want to turn a vision into reality, you have to give 100% and never stop believing in your dream.',
+        'Be hungry for success, hungry to make your mark, hungry to be seen and to be heard and to have an effect. And as you move up and become successful, make sure also to be hungry for helping others.',
+        'The more knowledge you have, the more you’re free to rely on your instincts.',
+        'I knew I was a winner back in the late sixties. I knew I was destined for great things. People will say that kind of thinking is totally immodest. I agree. Modesty is not a word that applies to me in any way – I hope it never will.',
+        'Life’s six rules for success. 1. Trust yourself. 2. Break some rules. 3. Don’t be afraid to fail. 4. Ignore the naysayers. 5. Work like hell. 6. Give something back.'
     ]
 };
 
