@@ -73,7 +73,7 @@ const quotes = {
         'Some dream it, some do it, some do both.',
         'You can be happy or you can be unhappy. It\'s just according to the way you look at things.',
         'Just as writers write the books they always wished they could read, Walt built the playground his inner child had always wanted to explore.',
-        'If you can ddream it, you can do it.',
+        'If you can dream it, you can do it.',
         'Laughter is timeless, imagination has no age, dreams are forever.',
         'The way to get started is to quit talking and begin doing.',
         'Why worry? If you’ve done the very best you can, then worrying won’t make it any better.',
