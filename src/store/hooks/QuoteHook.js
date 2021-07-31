@@ -18,7 +18,7 @@ import { requestQuote, getQuoteFromNetlify } from '../effects/QuoteEffect';
  * @returns {null}
  */
 export const getQuote = dispatch => action =>
-    requestQuote(action) // returns AsyncEffect
+    requestQuote(action) // returns AsyncEffect, can be replaced by getQuoteFromNetlify(action)
         .trigger
         (logger.error) // error in AsyncEffect
         (maybe // success in AsyncEffect
