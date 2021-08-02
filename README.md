@@ -1,5 +1,7 @@
 # 10 Easy Steps To Abandon Redux For Remarkable React Hooks
 
+Live Website: [Quotes Website](https://quotes.meet-martin.com/)
+
 Medium Post: Pending
 
 YouTube Video: [React Hook Global State Management](https://www.youtube.com/watch?v=lw7IumbVH_A)
