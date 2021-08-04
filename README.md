@@ -2,7 +2,7 @@
 
 Live Website: [Quotes Website](https://quotes.meet-martin.com/)
 
-Medium Post: Pending
+Medium Post: [10 Easy Steps To Abandon Redux For Remarkable React Hooks](https://betterprogramming.pub/10-easy-steps-to-abandon-redux-for-the-remarkable-react-hooks-124916fc634d)
 
 YouTube Video: [React Hook Global State Management](https://www.youtube.com/watch?v=lw7IumbVH_A)
 
