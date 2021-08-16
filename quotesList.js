@@ -96,6 +96,11 @@ const quotes = {
     ],
     'Alex Mazaltov': [
         'If you want to have success in your life just believe. You will see some dreams come true only if you sure.'
+    ],
+    'Franz Kafka': [
+        'If you find someone who makes you smile, who checks up on you often to see if you\'re okay. Who watches out or you and wants the best for you. Who loves and respects you. Don\'t let them go. People like that are hard to find.',
+        'It\'s only because of their stupidity that they\'re able to be so sure of themselves.',
+        'Start with what is right rather than what is acceptable.'
     ]
 };
 
