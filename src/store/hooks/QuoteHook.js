@@ -1,6 +1,6 @@
 import { maybe } from '@7urtle/lambda';
 
-import types from "../types";
+import types from '../types';
 import logger from '../../logger';
 import { requestQuote, getQuoteFromNetlify } from '../effects/QuoteEffect';
 
