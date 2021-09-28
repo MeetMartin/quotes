@@ -93,6 +93,9 @@ const quotes = {
         'The more knowledge you have, the more you’re free to rely on your instincts.',
         'I knew I was a winner back in the late sixties. I knew I was destined for great things. People will say that kind of thinking is totally immodest. I agree. Modesty is not a word that applies to me in any way – I hope it never will.',
         'Life’s six rules for success. 1. Trust yourself. 2. Break some rules. 3. Don’t be afraid to fail. 4. Ignore the naysayers. 5. Work like hell. 6. Give something back.'
+    ],
+    'Puck': [
+        'People saying: “It can’t be done,” are always being interrupted by somebody doing it.'
     ]
 };
 
