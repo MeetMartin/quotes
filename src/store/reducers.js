@@ -1,5 +1,5 @@
 import logger from '../logger';
-import types from "./types";
+import types from './types';
 
 const initialState = {
     quote: 'Creativity is intelligence having fun.',

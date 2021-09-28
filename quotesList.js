@@ -94,6 +94,14 @@ const quotes = {
         'I knew I was a winner back in the late sixties. I knew I was destined for great things. People will say that kind of thinking is totally immodest. I agree. Modesty is not a word that applies to me in any way – I hope it never will.',
         'Life’s six rules for success. 1. Trust yourself. 2. Break some rules. 3. Don’t be afraid to fail. 4. Ignore the naysayers. 5. Work like hell. 6. Give something back.'
     ],
+    'Alex Mazaltov': [
+        'If you want to have success in your life just believe. You will see some dreams come true only if you sure.'
+    ],
+    'Franz Kafka': [
+        'If you find someone who makes you smile, who checks up on you often to see if you\'re okay. Who watches out or you and wants the best for you. Who loves and respects you. Don\'t let them go. People like that are hard to find.',
+        'It\'s only because of their stupidity that they\'re able to be so sure of themselves.',
+        'Start with what is right rather than what is acceptable.'
+    ],
     'Puck': [
         'People saying: “It can’t be done,” are always being interrupted by somebody doing it.'
     ]
